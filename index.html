@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amruta Bagojikoppa | Portfolio</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+
+        /* --- CSS STYLES START HERE --- */
+
+        :root {
+            /* Pastel Color Palette */
+            --color-primary: #FFC0CB; /* Soft Pink */
+            --color-secondary: #ADD8E6; /* Light Blue */
+            --color-accent: #90EE90; /* Pale Green */
+            --color-text-dark: #333333;
+            --color-text-light: #ffffff;
+            --color-background-soft: #f4f7f6; /* Very light gray/off-white */
+
+            /* Gradients */
+            --gradient-hero: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            --gradient-section: linear-gradient(180deg, var(--color-background-soft) 0%, #ffffff 100%);
+
+            /* Other styles */
+            --border-radius-card: 15px;
+            --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background: var(--gradient-section); /* Soft gradient background */
+            padding: 0 15px; /* Add some space on the sides */
+            transition: padding-top 0.3s;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-secondary);
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 3.5rem; /* Large and bold for impact */
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--color-text-dark); /* Contrast with the H1 */
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-top: 1.5rem;
+        }
+
+        /* --- Navigation/Header/Footer --- */
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Home Section (Hero) --- */
+
+        #home {
+            min-height: 50vh; /* Make the hero section prominent */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--gradient-hero); /* Soft pastel gradient background */
+            color: var(--color-text-light); /* Light text on the gradient */
+            border-radius: var(--border-radius-card);
+            margin: 20px 0;
+            padding: 40px 20px;
+            box-shadow: var(--shadow-soft);
+            scroll-margin-top: 80px; /* For anchor linking */
+        }
+
+        #home .hero-content p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        #home .hero-content h1 {
+            color: var(--color-text-light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        #home .hero-content h2 {
+            color: var(--color-text-light);
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        /* --- Section Styling (Card-like containers) --- */
+
+        .about-me-section,
+        .details-section,
+        .education-details,
+        .blog-entry,
+        .contact-details,
+        .hobbies-list,
+        .skills-section {
+            background-color: #ffffff;
+            border-radius: var(--border-radius-card);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+            scroll-margin-top: 80px; /* For anchor linking */
+        }
+        
+        /* New section styling for About Me */
+        .about-me-section h3 {
+            margin-top: 0;
+            color: var(--color-secondary);
+        }
+        .about-me-section p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+
+        .details-section:hover,
+        .education-details:hover,
+        .blog-entry:hover,
+        .hobbies-list:hover,
+        .skills-section:hover,
+        .about-me-section:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        /* --- Details & Contact (Original styles) --- */
+
+        .details-section ul,
+        .contact-details p {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .details-section li {
+            padding: 5px 0;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Contact form styles (from previous request) */
+        .contact-details {
+            text-align: center; 
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-details form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-details input[type="text"],
+        .contact-details input[type="email"],
+        .contact-details textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: border-color 0.3s;
+        }
+        .contact-details input:focus,
+        .contact-details textarea:focus {
+            border-color: var(--color-primary);
+            outline: none;
+        }
+        .contact-details textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .contact-details button {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-details button:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-text-dark);
+        }
+
+        /* Education, Skills, Blog, Hobbies styles (unchanged) */
+        .education-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .education-details {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .ongoing-education,
+        .completed-education {
+            padding: 15px;
+            border-radius: 10px;
+            background-color: var(--color-background-soft);
+        }
+        .ongoing-education h4,
+        .completed-education h4 {
+            color: var(--color-text-dark);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .ongoing-education p,
+        .completed-education p {
+            margin: 0.3rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .blog-entry h3 {
+            margin-top: 0;
+            color: var(--color-secondary);
+        }
+        .blog-entry p {
+            margin: 10px 0 20px;
+            font-style: italic;
+        }
+        .blog-entry a {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--color-accent);
+            color: var(--color-text-dark);
+            border-radius: 20px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .blog-entry a:hover {
+            background-color: #7fffd4;
+        }
+        .hobbies-list ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+        }
+        .hobbies-list li {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: capitalize;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .hobbies-list li:before {
+            content: '✨';
+            margin-right: 5px;
+        }
+        .skills-section h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .skill-category {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: var(--color-background-soft);
+        }
+        .skill-category h4 {
+            font-size: 1.3rem;
+            color: var(--color-text-dark);
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .personal-skills ul,
+        .language-skills ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+        }
+        .personal-skills li,
+        .language-skills li {
+            background-color: var(--color-secondary);
+            color: var(--color-text-dark);
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .skill-bar-container {
+            margin-bottom: 15px;
+        }
+        .skill-bar-container p {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .progress-bar {
+            height: 12px;
+            background-color: #e9ecef;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+            transition: width 1.5s ease-out;
+            border-radius: 6px;
+            width: 0;
+        }
+        .progress-bar[data-level="60"] .progress-fill { width: 60%; }
+        .progress-bar[data-level="75"] .progress-fill { width: 75%; }
+        .progress-bar[data-level="55"] .progress-fill { width: 55%; }
+        .section-label {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        /* --- HAMBURGER MENU STYLES (Right-aligned) --- */
+        
+        /* 1. Fixed Header/Nav container */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #ffffff; /* White background for the header area */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            /* PUSHES CONTENT TO THE RIGHT */
+            justify-content: flex-end; 
+            padding: 0 15px;
+        }
+
+        /* 2. Menu Button (Hamburger) */
+        .menu-toggle {
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: var(--color-primary);
+            border-radius: 5px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Hamburger animation: X close button */
+        .menu-toggle.open span:nth-child(1) {
+            transform: translateY(8.5px) rotate(45deg);
+        }
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.open span:nth-child(3) {
+            transform: translateY(-8.5px) rotate(-45deg);
+        }
+
+        /* 3. Sidebar Navigation (Slides from the right) */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0; /* Aligned to the right edge */
+            left: auto;
+            width: 280px;
+            height: 100%;
+            background: #ffffff;
+            box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1); /* Shadow on the left */
+            transform: translateX(100%); /* Start off-screen (to the right) */
+            transition: transform 0.3s ease-in-out;
+            z-index: 1001;
+            padding-top: 60px;
+        }
+        
+        .sidebar.open {
+            transform: translateX(0); /* Slide in from the right */
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .sidebar nav ul li a {
+            display: block;
+            padding: 15px 30px;
+            color: var(--color-text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            /* Add some spacing for the icon/emoji */
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: var(--color-background-soft);
+            color: var(--color-primary);
+        }
+        
+        /* Style for the emoji/icon to separate it from text */
+        .sidebar nav ul li a span.icon {
+            font-size: 1.2rem;
+            margin-right: 15px;
+            opacity: 0.8;
+            color: var(--color-primary);
+        }
+
+
+        /* Adjust main content for fixed header */
+        body {
+            padding-top: 75px; /* Push content down below the fixed header */
+        }
+
+        /* --- CSS STYLES END HERE --- */
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#home"><span class="icon">🏠</span> Home</a></li>
+                <li><a href="#about-me"><span class="icon">👤</span> About</a></li>
+                <li><a href="#education"><span class="icon">🎓</span> Education</a></li>
+                <li><a href="#skills"><span class="icon">💡</span> Skills</a></li>
+                <li><a href="#blog"><span class="icon">💻</span> Blog</a></li>
+                <li><a href="#contact"><span class="icon">📞</span> Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section id="home">
+        <div class="hero-content">
+            <p>Hello, I'm</p>
+            <h1>Amruta</h1>
+            <h2>Engineering Student & Web Developer</h2>
+        </div>
+    </section>
+
+    <div class="about-me-section" id="about-me">
+        <h3>About Me - Career Objective</h3>
+        <p>Motivated engineering student with strong academic performance and hands-on project experience in web applications. I am eager to apply my skills in Python and Flask to solve real-world problems.</p>
+    </div>
+
+    <div class="details-section">
+        <h3>Details</h3>
+        <ul>
+            <li><strong>Location:</strong> Saipark road, Vijayapura, Karnataka</li>
+            <li><strong>Email:</strong> amrutabagojikoppa53@gmail.com</li>
+            <li><strong>Phone:</strong> 7975465885</li>
+        </ul>
+    </div>
+
+    <div class="education-details" id="education">
+        <div class="ongoing-education">
+            <h3>Ongoing</h3>
+            <h4>B.E (Engineering)</h4>
+            <p>BLDEA CET Engineering College Vijayapura</p>
+            <p>Current Status: 5th Semester</p>
+        </div>
+
+        <div class="completed-education">
+            <h3>Completed</h3>
+            <h4>PUC (Science)</h4>
+            <p>St. Joseph's PU College</p>
+            <p>Score: 94.16%</p>
+        </div>
+        
+        <div class="completed-education">
+            <h4>SSLC</h4>
+            <p>Jnana Deep High School</p>
+            <p>Jnana Deep High School</p>
+            <p>Score: 92.32%</p>
+        </div>
+    </div>
+    
+    <div class="skills-section" id="skills">
+        <h3>Skills & Tools</h3>
+        
+        <div class="skill-category technical-skills">
+            <h4>Technical Proficiency</h4>
+            
+            <div class="skill-bar-container">
+                <p>Python (Basic)</p>
+                <div class="progress-bar" data-level="60">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar-container">
+                <p>Web Dev (HTML/CSS/JS/Flask)</p>
+                <div class="progress-bar" data-level="75">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar-container">
+                <p>API Integration (OMDB)</p>
+                <div class="progress-bar" data-level="55">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category personal-skills">
+            <h4>Personal & Soft Skills</h4>
+            <ul>
+                <li>Communication</li>
+                <li>Teamwork</li>
+                <li>Problem Solving</li>
+                <li>Time Management</li>
+            </ul>
+        </div>
+        
+        <div class="skill-category language-skills">
+            <h4>Languages</h4>
+            <ul>
+                <li>English</li>
+                <li>Hindi</li>
+                <li>Kannada</li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="section-label" id="blog">BLOG</div>
+    <div class="blog-entry">
+        <h3>BLDEACET Portal</h3>
+        <p>A comprehensive web portal development project for BLDEACET, showcasing skills in full-stack web development, database integration, and UI design.</p>
+        <a href="https://bldeacet-portal.web.app/">Read More →</a>
+    </div>
+
+    <div class="section-label">HOBBIES</div>
+    <div class="hobbies-list">
+        <ul>
+            <li>sketching</li>
+            <li>listening to music</li>
+            <li>collecting coins</li>
+        </ul>
+    </div>
+    
+    <div class="section-label" id="contact">CONTACT ME</div>
+    <div class="contact-details">
+        <form action="#" method="POST"> 
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            <input type="text" name="phone" placeholder="Your Phone Number (Optional)">
+            <textarea name="message" placeholder="Your Message or Inquiry" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2025 Amruta Bagojikoppa. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            this.classList.toggle('open');
+            sidebar.classList.toggle('open');
+        });
+
+        // Close the menu when a link is clicked (for better mobile experience)
+        var sidebarLinks = document.querySelectorAll('.sidebar nav ul li a');
+        sidebarLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.getElementById('sidebar').classList.remove('open');
+                document.getElementById('menuToggle').classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
